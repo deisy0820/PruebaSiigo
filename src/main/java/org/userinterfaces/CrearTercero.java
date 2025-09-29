@@ -46,7 +46,9 @@ public class CrearTercero {
     public static final Target APELLIDOS = Target.the("apellidos")
             .located(ByShadow.cssSelector("input[class='mdc-text-field__input']","div:nth-child(2) > siigo-textfield-web:nth-child(1)"));
 
-    public static final Target COMERCIAL = Target.the("campo comercial").located(ByShadow.cssSelector("input[class='mdc-text-field__input']","div:nth-child(3) > div:nth-child(4) > siigo-textfield-web:nth-child(1)"));
+    public static final Target COMERCIAL = Target.the("campo comercial")
+            .located(ByShadow.cssSelector("input[class='mdc-text-field__input']","div:nth-child(3) > div:nth-child(4) > siigo-textfield-web:nth-child(1)"));
+
 
 
     public static final Target DIRECCION = Target.the("dirección")
@@ -54,9 +56,10 @@ public class CrearTercero {
 
     public static final Target CIUDAD = Target.the("campo ciudad")
             .located(ByShadow.cssSelector(
-                    "#divTDAutocompletecity1",
+                    "input[class='mdc-text-field__input']",
                     "div:nth-child(3) > div:nth-child(5) >  siigo-autocomplete-web:nth-child(1)"
             ));
+
 
 
     public static final Target CAMPO_CIUDAD= Target.the("City input in shadow")
@@ -70,7 +73,7 @@ public class CrearTercero {
     public static final Target CIUDAD_= Target.the("City input in shadow")
 
             .located(ByShadow.cssSelector(
-                    "input[class='mdc-text-field__input']",
+                    "#divTDAutocompletecity1",
                     "div:nth-child(3) > div:nth-child(5) >  siigo-autocomplete-web:nth-child(1)"
             ));
 

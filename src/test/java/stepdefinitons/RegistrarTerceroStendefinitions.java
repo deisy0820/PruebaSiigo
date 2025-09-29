@@ -54,8 +54,8 @@ public class RegistrarTerceroStendefinitions {
                 datos.get("Nombres"),
                 datos.get("Apellidos"),
                 datos.get("Ciudad"),
-                datos.get("Dirección"),
-                datos.get("Teléfono")
+                datos.get("Dirección")
+
 
         );
 
