@@ -51,7 +51,7 @@ public class PruebaApiStepdefinitions {
     @When("realiza un registro con email {string} y password {string}")
     public void realizaUnRegistroConEmailYPassword(String email, String password) {
         usuario.attemptsTo(
-                RegistrarUsuario.con(new UsuarioModel(email, password, null, null))
+                RegistrarUsuario.con(new UsuarioModel(email, password,null, null))
         );
         response = lastResponse();
         System.out.println(response.getBody().asString());
@@ -97,10 +97,24 @@ public class PruebaApiStepdefinitions {
     @Then("la respuesta debería contener los campos")
     public void laRespuestaDeberíaContenerLosCampos(io.cucumber.datatable.DataTable dataTable) {
 
-        List<String> campos = dataTable.asList();
-        for (String campo : campos) {
-            usuario.should(
-                    seeThat("El campo " + campo, ValidarCampo.value(campo), notNullValue()));
+        if (dataTable.width() == 1) {
+
+            List<String> campos = dataTable.asList();
+            for (String campo : campos) {
+                usuario.should(
+                        seeThat("El campo " + campo, ValidarCampo.value(campo), notNullValue())
+                );
+            }
+        } else if (dataTable.width() == 2) {
+
+            Map<String, String> expectedFields = dataTable.asMap(String.class, String.class);
+            expectedFields.forEach((jsonPath, expectedValue) -> {
+                usuario.should(
+                        seeThat("El campo " + jsonPath, ValidarCampo.value(jsonPath), equalTo(expectedValue))
+                );
+            });
+        } else {
+            throw new IllegalArgumentException("Formato de tabla no soportado en este step");
         }
     }
 

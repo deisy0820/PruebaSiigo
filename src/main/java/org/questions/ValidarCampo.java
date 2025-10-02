@@ -1,5 +1,6 @@
 package org.questions;
 
+
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
 
@@ -12,6 +13,7 @@ public class ValidarCampo implements Question<String> {
     public ValidarCampo(String campo) {
         this.campo = campo;
     }
+
     @Override
     public String answeredBy(Actor actor) {
         return lastResponse().jsonPath().getString(campo);
@@ -20,4 +22,5 @@ public class ValidarCampo implements Question<String> {
     public static ValidarCampo value(String field) {
         return new ValidarCampo(field);
     }
+
 }

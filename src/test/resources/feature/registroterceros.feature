@@ -6,9 +6,9 @@ Feature:Como usuario autenticado Quiero crear un cliente (tercero)
     When crea un tercero con los siguientes datos
       | Tipo               | Es persona           |
       | TipoIdentificación | Cédula de ciudadanía |
-      | Identificación     | 115218161            |
+      | Identificación     | 43736588             |
       | Nombres            | Daisy                |
       | Apellidos          | Mosquera             |
-      | Ciudad             | Medellín             |
-      | Dirección          | Calle 123            |
+      | Ciudad             | bogota               |
+      | Dirección          | Calle 23             |
     Then el tercero debería quedar registrado correctamente

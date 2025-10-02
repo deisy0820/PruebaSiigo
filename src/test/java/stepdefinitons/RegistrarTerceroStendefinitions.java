@@ -1,5 +1,6 @@
 package stepdefinitons;
 
+
 import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -7,7 +8,6 @@ import io.cucumber.java.en.When;
 import net.serenitybdd.annotations.Managed;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
-import net.serenitybdd.screenplay.actions.Open;
 import org.models.Tercero;
 import org.openqa.selenium.WebDriver;
 import org.questions.MensajeExito;
@@ -69,7 +69,7 @@ public class RegistrarTerceroStendefinitions {
     @Then("el tercero debería quedar registrado correctamente")
     public void elTerceroDeberíaQuedarRegistradoCorrectamente() {
 
-        String mensaje = usuario.asksFor(MensajeExito.delToast("div.toast-message"));
+        String mensaje = usuario.<String>asksFor(MensajeExito.delToast("div.toast-message"));
         System.out.println("Mensaje capturado: " + mensaje);
         usuario.should(
                 seeThat("El mensaje de éxito es correcto",

@@ -1,12 +1,13 @@
 package org.tasks;
 
+
+
 import io.restassured.http.ContentType;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.rest.interactions.Post;
 import org.models.UsuarioModel;
 import org.utils.Endpoints;
-
 
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 
@@ -20,6 +21,8 @@ public class RegistrarUsuario implements Task {
     public static RegistrarUsuario con(UsuarioModel user) {
         return instrumented(RegistrarUsuario.class, user);
     }
+
+
 
     @Override
     public <T extends Actor> void performAs(T actor) {

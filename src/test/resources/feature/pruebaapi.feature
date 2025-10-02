@@ -12,9 +12,10 @@ Feature: el usuario quiere validar un flujo completo de la API de ReqRes
 
 
     When consulta el usuario por id 2
-    Then debería recibir un código de respuesta para  la consulta 401
-
-
+    Then debería recibir un código de respuesta para  la consulta 200
+    And la respuesta debería contener los campos
+      | data.name | fuchsia rose |
+      | data.year | 2001         |
     When actualiza el usuario con nombre "morpheus" y trabajo "zion resident"
     Then debería recibir un código de respuesta para la actualizacion 401
 

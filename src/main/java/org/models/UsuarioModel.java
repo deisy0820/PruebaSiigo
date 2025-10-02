@@ -12,11 +12,13 @@ public class UsuarioModel {
 
 
 
+
     public UsuarioModel(String email, String password, String name, String job) {
         this.email = email;
         this.password = password;
         this.name = name;
         this.job = job;
+
    }
 
     // Getters & Setters
@@ -31,5 +33,7 @@ public class UsuarioModel {
 
     public String getJob() { return job; }
     public void setJob(String job) { this.job = job; }
+
+
 }
 
